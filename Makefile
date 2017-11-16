@@ -3,7 +3,7 @@ NAME=mattermost-dev
 VERSION=1.0
 
 build: ## Build docker image
-	docker build --build-arg VERSION=$(VERSION) -t $(ORG)/$(NAME):$(VERSION) .
+	docker build -t $(ORG)/$(NAME):$(VERSION) .
 
 .PHONY: size
 size: ## Update docker image size in README.md
