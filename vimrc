@@ -29,3 +29,4 @@ if !has('gui_running')
 endif
 
 set noshowmode
+set number

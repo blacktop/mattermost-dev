@@ -13,12 +13,14 @@ ENV LC_MONETARY="C.UTF-8"
 ENV LC_NUMERIC="C.UTF-8"
 ENV LC_TIME="C.UTF-8"
 
-RUN apk add --no-cache vim git zsh
+RUN apk add --no-cache vim git zsh make sed
 
 # Install mattermost-webapp
 RUN apk add --no-cache --virtual .build-deps git build-base \
   && git clone https://github.com/mattermost/mattermost-webapp.git /mattermost/mattermost-webapp \
   && cd /mattermost/mattermost-webapp \
+  && sed -i "24i DEV = true;" webpack.config.js \
+  && sed -i "25i FULLMAP = true;" webpack.config.js \
   && make build || true \
   && git clone https://github.com/mattermost/mattermost-redux.git /mattermost/mattermost-redux \
   && cd /mattermost/mattermost-redux \
