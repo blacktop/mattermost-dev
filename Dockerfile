@@ -39,7 +39,7 @@ RUN git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start
 RUN git clone https://github.com/jacoborus/tender.vim.git ~/.vim/pack/plugins/start/tender \
   && mkdir -p ~/.vim/colors \
   && cp ~/.vim/pack/plugins/start/tender/colors/tender.vim ~/.vim/colors/tender.vim
-# Install vim plugins
+# Install vim plugins deps
 RUN yarn add --dev eslint babel-eslint eslint-plugin-react
 RUN yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier
 
