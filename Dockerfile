@@ -18,6 +18,7 @@ RUN apk add --no-cache --virtual .build-deps curl \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
   && yarn add --dev eslint babel-eslint eslint-plugin-react \
   && yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier \
+  && cd ~/.vim/bundle && git clone git://github.com/ajh17/Spacegray.vim.git ~/.vim/plugged \
   && vim +PluginInstall +qall \
   && apk del .build-deps
 
