@@ -78,8 +78,6 @@ export PATH=/usr/local/bin:$PATH
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Golang
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
 alias cdgo='CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src'
 
 # export MANPATH="/usr/local/man:$MANPATH"

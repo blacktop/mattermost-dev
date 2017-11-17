@@ -11,7 +11,7 @@ size: ## Update docker image size in README.md
 
 .PHONY: ssh
 ssh: ## SSH into docker image
-	docker run -ti --rm $(ORG)/$(NAME):$(VERSION)
+	docker run -ti --rm -p 3000:3000 $(ORG)/$(NAME):$(VERSION)
 
 .PHONY: push
 push: build ## Push docker image to docker registry
